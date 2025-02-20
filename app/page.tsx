@@ -1,101 +1,149 @@
 import Image from "next/image";
+import profileImage from "@/public/image/profile.jpg";
+import Project from "@/components/Project";
+import Skill from "@/components/Skill";
+import Link from "next/link";
+
+import GmailIcon from "@/public/Icons/GmailIcon";
+import LinkdenIcon from "@/public/Icons/LinkdenIcon";
+import GithubIcon from "@/public/Icons/GithubIcon";
+import InstagramIcon from "@/public/Icons/InstagramIcon";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+    <div className="flex h-full justify-center">
+      <div className="flex flex-col gap-4 max-w-[60%] bg-gradient-to-r from-blue-100 to-purple-100 text-[#333333] px-10 py-5 ">
+        <div className="flex gap-1 ">
+          <div>
+            <div className="text-4xl">Sahil Verma</div>
+            <div>
+              Passionate software developer with expertise in C++,
+              JavaScript,and web development. Excel in data structures and
+              algorithms and am seeking opportunities to create innovative and
+              efficient solutions. Aspire to improve the quality of my work and
+              contribute to the growth of a progressive organization.
+            </div>
+          </div>
+          <div className="">
             <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+              className="rounded-full shadow-lg"
+              src={profileImage}
+              alt="myprogile"
+              height={200}
+              width={350}
             />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+        <div className="border p-4 shadow-sm bg-gradient-to-r from-blue-50 to-purple-50 rounded-md">
+          <div className="text-2xl">Experience</div>
+          <div>
+            Strong proficiency in programming, Expertise in C++, with a solid
+            foundation in data structures and algorithms, delivering optimized
+            and efficient solutions for complex problems.
+          </div>
+          <div>
+            Full-Stack Web Development Expertise: Designed and implemented
+            scalable applications using Node.js, Express.js, and React.js,
+            leveraging Next.js for server-side rendering and optimization
+          </div>
+          <div>
+            Database & Cloud Integration: Architected secure and optimized
+            database solutions using PostgreSQL and MongoDB, with deployment on
+            AWS, Render and Vercel, ensuring high availability & performance.
+          </div>
+        </div>
+        <div className="border p-4 shadow-sm  bg-gradient-to-r from-blue-50 to-purple-50 rounded-md">
+          <div className="text-2xl mb-3">Skills</div>
+          <div className="flex flex-wrap gap-2 ">
+            {skills.map((skill, key) => (
+              <Skill key={key} skill={skill} />
+            ))}
+          </div>
+        </div>
+        <div className="border p-4 shadow-sm bg-gradient-to-r from-blue-50 to-purple-50 rounded-md">
+          <div className="text-2xl mb-3">Projects</div>
+          <div>
+            {projects.map((project, key) => (
+              <Project
+                key={key}
+                title={project.title}
+                description={project.description}
+                link={project.link}
+                technology={project.technology}
+              />
+            ))}
+          </div>
+        </div>
+        <div className="border p-4 shadow-sm bg-gradient-to-r from-blue-50 to-purple-50 rounded-md">
+          <div className="text-2xl mb-3">Contact Info</div>
+          <div className="flex gap-8">
+            <Link href="mailto:sahilverma6353@gmail.com" target="_blank">
+              <GmailIcon />
+            </Link>
+            <Link
+              href="https://www.linkedin.com/in/-sahil-verma/"
+              target="_blank"
+            >
+              <LinkdenIcon />
+            </Link>
+            <Link href="https://github.com/sahil4798" target="_blank">
+              <GithubIcon />
+            </Link>
+            <Link href="https://www.instagram.com/aahil.to/" target="_blank">
+              <InstagramIcon />
+            </Link>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
+
+const skills: string[] = [
+  "C++",
+  "DSA",
+  "JavaScript",
+  "NodeJs",
+  "ExpressJs",
+  "ReactJs",
+  "NextJs",
+  "Postgres",
+  "Mongoose",
+  "Prisma",
+  "AWS",
+  "Cloudflare",
+  "Docker",
+  "TypeScript",
+];
+
+const projects: skillsType = [
+  {
+    title: "Medium",
+    technology: [
+      "NodeJs",
+      "HonoJs",
+      "Cloudflare",
+      "Postgres",
+      "Prisma",
+      "ReactJs",
+      "Vercel",
+    ],
+    description:
+      "Medium is an online publishing platform that allows users to read, write, and share articles, stories, and ideas on a wide range of topics",
+    link: "https://medium.aahil.online/",
+  },
+  {
+    title: "YelpCamp",
+    technology: ["HTML", "CSS", "JavaScript", "Node.js", "MongoDB", "Render"],
+    description:
+      "Successfully completing the project expanded technical skills and understanding of full-stack web development and deployment practices, laying a strong foundation for future projects and encouraging the adoption of new technologies",
+    link: "https://yelpcamp.aahil.online/",
+  },
+];
+
+type skillsType = {
+  title: string;
+  technology: string[];
+  description: string;
+  link: string;
+}[];
