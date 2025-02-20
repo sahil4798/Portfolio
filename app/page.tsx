@@ -12,7 +12,7 @@ import InstagramIcon from "@/public/Icons/InstagramIcon";
 export default function Home() {
   return (
     <div className="flex h-full justify-center">
-      <div className="flex flex-col gap-4 max-w-[60%] bg-gradient-to-r from-blue-100 to-purple-100 text-[#333333] px-10 py-5 ">
+      <div className="flex flex-col gap-4 max-w-[60%] bg-gradient-to-r from-blue-100 to-purple-100 text-[#333333] px-10 py-5 pt-20 ">
         <div className="flex gap-1 ">
           <div>
             <div className="text-4xl">Sahil Verma</div>
